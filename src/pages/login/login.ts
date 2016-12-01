@@ -8,7 +8,7 @@ import { UserPage } from '../user/user';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  FB_APP_ID: number = 1831521147105130;
+  FB_APP_ID: number = your_app_id;
 
   constructor(public navCtrl: NavController) {
     Facebook.browserInit(this.FB_APP_ID, "v2.8");
