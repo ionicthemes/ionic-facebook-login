@@ -9,7 +9,7 @@ import { UserPage } from '../user/user';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  FB_APP_ID: number = 725261520963213;
+  FB_APP_ID: number = your_app_id;
 
   constructor(
     public navCtrl: NavController,
