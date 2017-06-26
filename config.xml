@@ -40,7 +40,7 @@
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
     <plugin name="cordova-plugin-nativestorage" spec="~2.0.2" />
     <plugin name="cordova-plugin-facebook4" spec="~1.7.4">
-        <variable name="APP_ID" value="725261520963213" />
-        <variable name="APP_NAME" value="Ionic2LoginExample" />
+        <variable name="APP_ID" value="your_app_id" />
+        <variable name="APP_NAME" value="your_app_name" />
     </plugin>
 </widget>
