@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Facebook, NativeStorage } from 'ionic-native';
+import { Facebook } from '@ionic-native/facebook';
+import { NativeStorage } from '@ionic-native/native-storage';
 import { NavController } from 'ionic-angular';
 import { UserPage } from '../user/user';
 
@@ -10,27 +11,32 @@ import { UserPage } from '../user/user';
 export class LoginPage {
   FB_APP_ID: number = your_app_id;
 
-  constructor(public navCtrl: NavController) {
-    Facebook.browserInit(this.FB_APP_ID, "v2.8");
+  constructor(
+    public navCtrl: NavController,
+    public fb: Facebook,
+    public nativeStorage: NativeStorage
+    ) {
+    this.fb.browserInit(this.FB_APP_ID, "v2.8");
   }
 
   doFbLogin(){
     let permissions = new Array<string>();
     let nav = this.navCtrl;
+    let env = this;
     //the permissions your facebook app needs from the user
     permissions = ["public_profile"];
 
-    Facebook.login(permissions)
+    this.fb.login(permissions)
     .then(function(response){
       let userId = response.authResponse.userID;
       let params = new Array<string>();
 
       //Getting name and gender properties
-      Facebook.api("/me?fields=name,gender", params)
+      env.fb.api("/me?fields=name,gender", params)
       .then(function(user) {
         user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
         //now we have the users info, let's save it in the NativeStorage
-        NativeStorage.setItem('user',
+        env.nativeStorage.setItem('user',
         {
           name: user.name,
           gender: user.gender,
