@@ -9,7 +9,7 @@ import { UserPage } from '../user/user';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  FB_APP_ID: number = your_app_id;
+  FB_APP_ID: number = 725261520963213;
 
   constructor(
     public navCtrl: NavController,
@@ -22,33 +22,33 @@ export class LoginPage {
   doFbLogin(){
     let permissions = new Array<string>();
     let nav = this.navCtrl;
-    let env = this;
+
     //the permissions your facebook app needs from the user
     permissions = ["public_profile"];
 
     this.fb.login(permissions)
-    .then(function(response){
+    .then((response) => {
       let userId = response.authResponse.userID;
       let params = new Array<string>();
 
       //Getting name and gender properties
-      env.fb.api("/me?fields=name,gender", params)
-      .then(function(user) {
+      this.fb.api("/me?fields=name,gender", params)
+      .then((user) => {
         user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
         //now we have the users info, let's save it in the NativeStorage
-        env.nativeStorage.setItem('user',
+        this.nativeStorage.setItem('user',
         {
           name: user.name,
           gender: user.gender,
           picture: user.picture
         })
-        .then(function(){
+        .then(() => {
           nav.push(UserPage);
-        }, function (error) {
+        },(error) => {
           console.log(error);
         })
       })
-    }, function(error){
+    }, (error) => {
       console.log(error);
     });
   }

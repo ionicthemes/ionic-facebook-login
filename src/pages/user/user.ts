@@ -21,29 +21,27 @@ export class UserPage {
   ) {}
 
   ionViewCanEnter(){
-    let env = this;
     this.nativeStorage.getItem('user')
-    .then(function (data){
-      env.user = {
+    .then((data) => {
+      this.user = {
         name: data.name,
         gender: data.gender,
         picture: data.picture
       };
-        env.userReady = true;
-    }, function(error){
+      this.userReady = true;
+    }, (error) => {
       console.log(error);
     });
   }
 
   doFbLogout(){
     var nav = this.navCtrl;
-    let env = this;
     this.fb.logout()
-    .then(function(response) {
+    .then((response) => {
       //user logged out so we will remove him from the NativeStorage
-      env.nativeStorage.remove('user');
+      this.nativeStorage.remove('user');
       nav.push(LoginPage);
-    }, function(error){
+    }, (error) => {
       console.log(error);
     });
   }
