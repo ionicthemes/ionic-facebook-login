@@ -7,4 +7,5 @@ For this Ionic example app we are going to build a simple app that allows users 
 ![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/facebook-login/3.PNG?v=4)
 
 **Note:** This code is for Ionic v3.
+- If you are working with Ionic v4 go to [ionic-v4 code](https://github.com/ionicthemes/ionic3-facebook-login).
 - If you are working with Ionic v1 go to [Add Facebook Native Login to your Ionic v1 App](https://ionicthemes.com/tutorials/about/native-facebook-login-with-ionic-framework).

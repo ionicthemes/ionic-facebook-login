@@ -12,7 +12,7 @@ For this Ionic example app we are going to build a simple ionic 4 app that allow
 </div>
 
 **Note:** This code is for Ionic v4.
-- If you are working with Ionic v3 go to [ionic-v3 branch](https://github.com/ionicthemes/ionic3-facebook-login).
+- If you are working with Ionic v3 go to [ionic-v3 branch](https://github.com/ionicthemes/ionic3-facebook-login/tree/master/ionic-v3).
 - If you are working with Ionic v1 go to [Add Facebook Native Login to your Ionic v1 App](https://ionicthemes.com/tutorials/about/native-facebook-login-with-ionic-framework).
 
 
