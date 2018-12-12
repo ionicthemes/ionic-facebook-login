@@ -1,1 +1,0 @@
-export * from '../dist/esm/es2017/ionic.define.js';
