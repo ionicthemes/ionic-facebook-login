@@ -1,22 +1,16 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-content class="login-content" padding>
-  <ion-grid>
-    <ion-row class="top-row">
-      <ion-col>
-        <h1 class="label-logo">LOGO</h1>
-        <p class="label-description">This app helps you add Facebook Login to your Ionic 4 App.</p>
-        <p class="label-description">Courtesy of <a href="https://ionicthemes.com" target="_blank">IonicThemes</a> Team ;)</p>
-      </ion-col>
-    </ion-row>
-    <ion-row class="bottom-row">
-      <ion-col class="login-button">
-        <ion-button expand="block" (click)="doFbLogin()">Facebook Login</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-row>
+    <ion-col>
+      <h1 class="logo">LOGO</h1>
+      <p class="description">This app helps you add Facebook Login to your Ionic 4 App.</p>
+      <p class="description">Courtesy of <a href="https://ionicthemes.com" target="_blank">IonicThemes</a> Team ;)</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button class="log-in-button" color="primary" expand="block" (click)="doFbLogin()">
+        LOG IN WITH FACEBOOK
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>

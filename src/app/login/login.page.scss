@@ -2,25 +2,21 @@
   --background: #FF6347;
 }
 
-.label-logo{
+.logo {
   color: white;
-  font-size: 400%;
+  font-size: 64px;
   font-weight: bold;
   text-align: center;
   padding-top: 50px;
 }
 
-.label-description{
+.description {
   color: white;
-  font-size: 130%;
+  font-size: 22px;
   text-align: center;
 }
 
-.top-row{
-  height: 80%;
-}
-
-.bottom-row{
-  height: 20%;
-
+.log-in-button {
+  margin-top: 40px;
+  font-weight: bold;
 }
