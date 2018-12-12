@@ -1,8 +1,7 @@
 {
-  "name": "ionic2FbLogin",
-  "app_id": "",
-  "type": "ionic-angular",
+  "name": "ionic4-facebook-login",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "angular"
 }
