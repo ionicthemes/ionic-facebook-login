@@ -1,0 +1,14 @@
+@import "./textarea";
+@import "./textarea.md.vars";
+
+// Material Design Textarea
+// --------------------------------------------------
+
+:host {
+  --padding-top: #{$textarea-md-padding-top};
+  --padding-end: #{$textarea-md-padding-end};
+  --padding-bottom: #{$textarea-md-padding-bottom};
+  --padding-start: #{$textarea-md-padding-start};
+
+  font-size: $textarea-md-font-size;
+}

@@ -1,0 +1,67 @@
+@import "./fab-button";
+@import "./fab-button.ios.vars";
+
+// iOS FAB Button
+// --------------------------------------------------
+
+:host {
+  --background: #{$fab-ios-background-color};
+  --background-activated: #{$fab-ios-background-color-activated};
+  --background-focused: var(--background-activated);
+  --color: #{$fab-ios-text-color};
+  --color-activated: #{$fab-ios-text-color};
+  --color-focused: var(--color-activated);
+  --box-shadow: #{$fab-ios-box-shadow};
+  --transition: #{$fab-ios-transition};
+}
+
+:host(.activated) {
+  --box-shadow: #{$fab-ios-box-shadow-activated};
+  --transform: #{$fab-ios-transform};
+  --transition: #{$fab-ios-transition-activated};
+}
+
+::slotted(ion-icon),
+.close-icon {
+  font-size: $fab-ios-icon-font-size;
+}
+
+// FAB buttons in a list
+// --------------------------------------------------
+
+:host(.fab-button-in-list) {
+  --background: #{$fab-ios-list-button-background-color};
+  --background-activated: #{$fab-ios-list-button-background-color-activated};
+  --background-focused: var(--background-activated);
+  --color: #{$fab-ios-list-button-text-color};
+  --color-activated: #{$fab-ios-list-button-text-color};
+  --color-focused: var(--color-activated);
+  --transition: #{transform 200ms ease 10ms,
+              opacity 200ms ease 10ms};
+}
+
+:host(.fab-button-in-list) ::slotted(ion-icon) {
+  font-size: $fab-ios-list-button-icon-font-size;
+}
+
+
+// Translucent FAB buttons
+// --------------------------------------------------
+
+:host(.fab-translucent) {
+  --background: #{$fab-ios-translucent-background-color};
+  --backdrop-filter: #{$fab-ios-translucent-filter};
+}
+
+:host(.fab-translucent-in-list) {
+  --background: #{$fab-ios-list-button-translucent-background-color};
+}
+
+// .fab-translucent-ios-#{$color-name} {
+//   background-color: ion-color($color-name, base, $fab-ios-translucent-background-color-alpha);
+//   opacity: .8;
+// }
+
+// .fab-translucent-ios-#{$color-name}.activated {
+//   opacity: 1;
+// }

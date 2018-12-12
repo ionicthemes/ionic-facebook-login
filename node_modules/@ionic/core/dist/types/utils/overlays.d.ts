@@ -1,0 +1,13 @@
+import { AnimationBuilder, HTMLIonOverlayElement, IonicConfig, OverlayInterface } from '../interface';
+export declare function createOverlay<T extends HTMLIonOverlayElement>(element: T, opts: object | undefined): Promise<T>;
+export declare function connectListeners(doc: Document): void;
+export declare function dismissOverlay(doc: Document, data: any, role: string | undefined, overlayTag: string, id?: string): Promise<boolean>;
+export declare function getOverlays(doc: Document, overlayTag?: string): HTMLIonOverlayElement[];
+export declare function getOverlay(doc: Document, overlayTag?: string, id?: string): HTMLIonOverlayElement | undefined;
+export declare function present(overlay: OverlayInterface, name: keyof IonicConfig, iosEnterAnimation: AnimationBuilder, mdEnterAnimation: AnimationBuilder, opts?: any): Promise<void>;
+export declare function dismiss(overlay: OverlayInterface, data: any | undefined, role: string | undefined, name: keyof IonicConfig, iosLeaveAnimation: AnimationBuilder, mdLeaveAnimation: AnimationBuilder, opts?: any): Promise<boolean>;
+export declare function autoFocus(containerEl: HTMLElement): HTMLElement | undefined;
+export declare function eventMethod<T>(element: HTMLElement, eventName: string): Promise<T>;
+export declare function onceEvent(element: HTMLElement, eventName: string, callback: (ev: Event) => void): void;
+export declare function isCancel(role: string | undefined): boolean;
+export declare const BACKDROP = "backdrop";

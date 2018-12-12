@@ -1,0 +1,33 @@
+@import "./input";
+@import "./input.md.vars";
+
+
+// Material Design Input
+// --------------------------------------------------
+
+:host {
+  --padding-top: #{$input-md-padding-top};
+  --padding-end: #{$input-md-padding-end};
+  --padding-bottom: #{$input-md-padding-bottom};
+  --padding-start: #{$input-md-padding-start};
+
+  font-size: $input-md-font-size;
+}
+
+
+.input-clear-icon {
+  @include svg-background-image($input-md-input-clear-icon-svg);
+
+  width: $input-md-input-clear-icon-width;
+  height: $input-md-input-clear-icon-width;
+
+  background-size: $input-md-input-clear-icon-size;
+}
+
+// Material Design Inset Input
+// --------------------------------------------------
+
+// .inset-input {
+//   @include padding($input-md-inset-padding-top, $input-md-inset-padding-end, $input-md-inset-padding-bottom, $input-md-inset-padding-start);
+//   @include margin($input-md-inset-margin-top, $input-md-inset-margin-end, $input-md-inset-margin-bottom, $input-md-inset-margin-start);
+// }

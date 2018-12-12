@@ -1,0 +1,29 @@
+@import "./input";
+@import "./input.ios.vars";
+
+:host {
+  --padding-top: #{$input-ios-padding-top};
+  --padding-end: #{$input-ios-padding-end};
+  --padding-bottom: #{$input-ios-padding-bottom};
+  --padding-start: #{$input-ios-padding-start};
+
+  font-size: $input-ios-font-size;
+}
+
+.input-clear-icon {
+  @include svg-background-image($input-ios-input-clear-icon-svg);
+
+  width: $input-ios-input-clear-icon-width;
+  height: $input-ios-input-clear-icon-width;
+
+  background-size: $input-ios-input-clear-icon-size;
+}
+
+// iOS Inset Input
+// --------------------------------------------------
+
+// TODO: where is it apply
+// :host(.inset-input) {
+//   @include padding($input-ios-inset-padding-top, $input-ios-inset-padding-end, $input-ios-inset-padding-bottom, $input-ios-inset-padding-start);
+//   @include margin($input-ios-inset-margin-top, $input-ios-inset-margin-end, $input-ios-inset-margin-bottom, $input-ios-inset-margin-start);
+// }

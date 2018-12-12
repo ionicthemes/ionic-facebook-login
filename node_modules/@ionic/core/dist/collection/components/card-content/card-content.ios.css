@@ -1,0 +1,26 @@
+ion-card-content {
+  display: block;
+  position: relative; }
+
+.card-content-ios {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.4; }
+  .card-content-ios h1 {
+    margin: 0 0 2px;
+    font-size: 24px;
+    font-weight: normal; }
+  .card-content-ios h2 {
+    margin: 2px 0;
+    font-size: 16px;
+    font-weight: normal; }
+  .card-content-ios h3,
+  .card-content-ios h4,
+  .card-content-ios h5,
+  .card-content-ios h6 {
+    margin: 2px 0;
+    font-size: 14px;
+    font-weight: normal; }
+  .card-content-ios p {
+    margin: 0 0 2px;
+    font-size: 14px; }

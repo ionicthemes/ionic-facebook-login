@@ -1,0 +1,31 @@
+:host {
+  /**
+   * @prop --background: Background of the list header
+   * @prop --color: Color of the list header text
+   */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 40px;
+  background: var(--background);
+  color: var(--color);
+  overflow: hidden; }
+
+:host(.ion-color) {
+  background: var(--ion-color-base);
+  color: var(--ion-color-contrast); }
+
+:host {
+  --background: transparent;
+  --color: var(--ion-text-color-step-150, #262626);
+  padding-left: calc(var(--ion-safe-area-left, 0px) + 16px);
+  position: relative;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase; }

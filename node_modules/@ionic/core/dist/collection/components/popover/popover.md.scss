@@ -1,0 +1,25 @@
+@import "./popover";
+@import "./popover.md.vars";
+
+// Material Design Popover
+// --------------------------------------------------
+
+.popover-content {
+  @include border-radius($popover-md-border-radius);
+  @include transform-origin(start, top);
+
+  width: $popover-md-width;
+  min-width: $popover-md-min-width;
+  min-height: $popover-md-min-height;
+  max-height: $popover-md-max-height;
+
+  background: $popover-md-background;
+  color: $popover-md-text-color;
+
+  box-shadow: $popover-md-box-shadow;
+}
+
+.popover-viewport {
+  // opacity: 0;
+  transition-delay: 100ms;
+}

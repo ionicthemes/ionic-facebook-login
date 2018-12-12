@@ -1,11 +1,38 @@
-## Complete Tutorial in: https://ionicthemes.com/tutorials/about/ionic2-facebook-login
+# Facebook Authentication in Ionic 4 Apps
 
-In this post you will learn how to add Facebook Native Login to your Ionic 2 app. I will explain you why I think this approach is the best you can take.
+This repo is an Ionic v4 starter app to show you how to add Facebook Log In to an Ionic App. There is also a [detailed tutorial](https://ionicthemes.com/tutorials/about/facebook-authentication-in-ionic3-apps) to help you with the Facebook setup and with the step by step of building this Ionic Framework app.
 
-As an example we are going to build a simple app that allows users to login to your app using their Facebook account. Once they log in, they will see a home page with their basic profile info.
 
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/facebook-login/1.PNG?v=4)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/facebook-login/2.PNG?v=4)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/facebook-login/3.PNG?v=4)
+For this Ionic example app we are going to build a simple ionic 4 app that allows users to log in using their Facebook account. Once they log in, they will see a home page with their basic profile info.
 
-**Note:** This post is for Ionic 2. If you are working with Ionic 1 go [here](https://ionicthemes.com/tutorials/about/native-facebook-login-with-ionic-framework).
+![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/facebook-login/ionic4/ionic4-facebook-login.jpeg)
+![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/facebook-login/ionic4/ionic4-fb-login.jpeg)
+![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/facebook-login/ionic4/ionic4-social-login.png)
+
+**Note:** This code is for Ionic v4.
+- If you are working with Ionic v3 go to [ionic-v3 branch](https://github.com/ionicthemes/ionic3-facebook-login).
+- If you are working with Ionic v1 go to [Add Facebook Native Login to your Ionic v1 App](https://ionicthemes.com/tutorials/about/native-facebook-login-with-ionic-framework).
+
+
+
+## Installation of this app
+
+### Install node dependencies
+`$ npm install`
+
+
+## Running the app
+
+### To run the app on your browser
+`$ ionic serve`
+
+### To run the app on iOS
+Follow the steps from https://beta.ionicframework.com/docs/building/ios
+
+`$ ionic cordova prepare ios`
+
+### To run the app on Android
+Follow the steps from https://beta.ionicframework.com/docs/building/android
+
+`$ ionic cordova prepare android`
+`$ ionic cordova run android`

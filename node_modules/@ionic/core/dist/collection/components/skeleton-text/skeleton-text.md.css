@@ -1,0 +1,19 @@
+:host {
+  /**
+   * --background: Background of the skeleton text
+   */
+  display: inline-block;
+  width: 100%;
+  pointer-events: none;
+  user-select: none; }
+
+span {
+  display: inline-block;
+  font-size: 8px; }
+
+:host {
+  --background: var(--ion-text-color, #000); }
+
+span {
+  background: var(--background);
+  opacity: 0.1; }

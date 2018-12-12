@@ -1,0 +1,29 @@
+:host {
+  position: absolute;
+  z-index: 999; }
+
+:host(.fab-horizontal-center) {
+  left: 50%;
+  margin-left: -28px; }
+
+:host(.fab-horizontal-start) {
+  left: calc(10px + var(--ion-safe-area-left, 0px)); }
+
+:host(.fab-horizontal-end) {
+  right: calc(10px + var(--ion-safe-area-right, 0px)); }
+
+:host(.fab-vertical-top) {
+  top: 10px; }
+
+:host(.fab-vertical-top.fab-edge) {
+  top: -28px; }
+
+:host(.fab-vertical-bottom) {
+  bottom: 10px; }
+
+:host(.fab-vertical-bottom.fab-edge) {
+  bottom: -28px; }
+
+:host(.fab-vertical-center) {
+  margin-top: -28px;
+  top: 50%; }

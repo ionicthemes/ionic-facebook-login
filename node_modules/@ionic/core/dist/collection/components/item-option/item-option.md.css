@@ -1,0 +1,69 @@
+:host {
+  /**
+   * @prop --background: Background of the item option
+   * @prop --color: Color of the item option
+   */
+  --background: var(--ion-color-primary, #3880ff);
+  --color: var(--ion-color-primary-contrast, #fff);
+  background: var(--background);
+  color: var(--color);
+  font-family: var(--ion-font-family, inherit); }
+
+:host(.in-list.item-options-end:last-child) {
+  padding-right: calc(.7em + var(--ion-safe-area-right)); }
+
+:host(.in-list.item-options-start:first-child) {
+  padding-left: calc(.7em + var(--ion-safe-area-left)); }
+
+:host(.ion-color) {
+  background: var(--ion-color-base);
+  color: var(--ion-color-contrast); }
+
+.button-native {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-decoration: inherit;
+  text-overflow: inherit;
+  text-transform: inherit;
+  text-align: inherit;
+  white-space: inherit;
+  color: inherit;
+  padding: 0 0.7em;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  appearance: none; }
+
+.button-inner {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%; }
+
+::slotted([slot="icon-only"]) {
+  padding: 0;
+  margin: 0 10px;
+  min-width: .9em;
+  font-size: 1.8em; }
+
+:host(.item-option-expandable) {
+  flex-shrink: 0;
+  transition-duration: 0;
+  transition-property: none;
+  transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1); }
+
+:host {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase; }

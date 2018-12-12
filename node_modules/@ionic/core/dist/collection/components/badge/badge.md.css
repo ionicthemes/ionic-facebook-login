@@ -1,0 +1,45 @@
+:host {
+  /**
+   * @prop --background: Background of the badge
+   * @prop --color: Text color of the badge
+   *
+   * @prop --padding-top: Padding top of the badge
+   * @prop --padding-end: Padding end of the badge
+   * @prop --padding-bottom: Padding bottom of the badge
+   * @prop --padding-start: Padding start of the badge
+   */
+  --background: var(--ion-color-primary, #3880ff);
+  --color: var(--ion-color-primary-contrast, #fff);
+  --padding-top: 3px;
+  --padding-end: 8px;
+  --padding-bottom: 3px;
+  --padding-start: 8px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  padding: var(--padding-top) var(--padding-end) var(--padding-bottom) var(--padding-start);
+  display: inline-block;
+  min-width: 10px;
+  background: var(--background);
+  color: var(--color);
+  font-family: var(--ion-font-family, inherit);
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  contain: content;
+  vertical-align: baseline; }
+
+:host(.ion-color) {
+  background: var(--ion-color-base);
+  color: var(--ion-color-contrast); }
+
+:host(:empty) {
+  display: none; }
+
+:host {
+  --padding-top: 3px;
+  --padding-end: 4px;
+  --padding-bottom: 4px;
+  --padding-start: 4px;
+  border-radius: 4px; }

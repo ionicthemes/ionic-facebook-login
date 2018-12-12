@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  position: relative;
+  background: var(--background);
+  color: var(--color); }
+
+:host(.ion-color) {
+  background: var(--ion-color-base);
+  color: var(--ion-color-contrast); }
+
+:host(.ion-color) ::slotted(ion-card-title),
+:host(.ion-color) ::slotted(ion-card-subtitle) {
+  color: currentColor; }
+
+:host {
+  padding: 20px 20px 16px; }
+
+:host(.card-header-translucent) {
+  background-color: rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.9);
+  backdrop-filter: saturate(180%) blur(30px); }

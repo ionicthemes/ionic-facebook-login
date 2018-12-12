@@ -1,0 +1,67 @@
+:host {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; }
+
+.popover-wrapper {
+  opacity: 0;
+  z-index: 10; }
+
+.popover-content {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  overflow: auto;
+  z-index: 10; }
+
+.popover-viewport {
+  --ion-safe-area-top: 0px;
+  --ion-safe-area-right: 0px;
+  --ion-safe-area-bottom: 0px;
+  --ion-safe-area-left: 0px; }
+
+.popover-content {
+  border-radius: 10px;
+  width: 200px;
+  min-width: 0;
+  min-height: 0;
+  max-height: 90%;
+  background-color: var(--ion-background-color, #fff);
+  color: var(--ion-text-color, #000); }
+
+.popover-arrow {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  overflow: hidden; }
+
+.popover-arrow::after {
+  left: 3px;
+  top: 3px;
+  border-radius: 3px;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  background-color: var(--ion-background-color, #fff);
+  content: "";
+  z-index: 10; }
+
+:host(.popover-bottom) .popover-arrow {
+  top: auto;
+  bottom: -10px; }
+
+:host(.popover-bottom) .popover-arrow::after {
+  top: -6px; }
+
+:host(.popover-translucent) .popover-content,
+:host(.popover-translucent) .popover-arrow::after {
+  background: rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8);
+  backdrop-filter: saturate(180%) blur(20px); }

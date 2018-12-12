@@ -1,0 +1,1 @@
+function n(n,t){n.addEventListener("statusTap",()=>{t.read(()=>{const e=n.document.elementFromPoint(n.innerWidth/2,n.innerHeight/2);if(!e)return;const o=e.closest("ion-content");o&&o.componentOnReady().then(()=>{t.write(()=>o.scrollToTop(300))})})})}window;export{n as startStatusTap};
