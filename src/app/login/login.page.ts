@@ -3,6 +3,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
 import { Router } from '@angular/router';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { LoadingController, AlertController, Platform } from '@ionic/angular';
+declare var FB: any;
 
 @Component({
   selector: 'app-login',
@@ -28,40 +29,62 @@ export class LoginPage {
     });
     this.presentLoading(loading);
 
-    //the permissions your facebook app needs from the user
-    const permissions = ["public_profile", "email"];
+    if (this.platform.is('cordova')) {
+      // make your native API calls
+      //the permissions your facebook app needs from the user
+      const permissions = ["public_profile", "email"];
 
-    this.fb.login(permissions)
-    .then(response => {
-      let userId = response.authResponse.userID;
-      //Getting name and email properties
-      //Learn more about permissions in https://developers.facebook.com/docs/facebook-login/permissions
+      this.fb.login(permissions)
+      .then(response => {
+        let userId = response.authResponse.userID;
+        //Getting name and email properties
+        //Learn more about permissions in https://developers.facebook.com/docs/facebook-login/permissions
+        this.fb.api("/me?fields=name,email", permissions)
+        .then(user => {
+          user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
+          //now we have the users info, let's save it in the NativeStorage
+          this.nativeStorage.setItem('facebook_user',
+          {
+            name: user.name,
+            email: user.email,
+            picture: user.picture
+          })
+          .then(() => {
+            this.router.navigate(["/user"]);
+            loading.dismiss();
+          }, error => {
+            console.log(error);
+            loading.dismiss();
+          })
+        })
+      }, error =>{
+        console.log(error);
+        if(!this.platform.is('cordova')){
+          this.presentAlert();
+        }
+        loading.dismiss();
+      });
+    } else {
+      // fallback to browser APIs
+      FB.login( response => {
+        if (response.authResponse) {
+         let userId = response.authResponse.userID;
+         console.log('Welcome!  Fetching your information.... ');
+         FB.api('/me?fields=name,email', user => {
+           user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
 
-      this.fb.api("/me?fields=name,email", permissions)
-      .then(user => {
-        user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
-        //now we have the users info, let's save it in the NativeStorage
-        this.nativeStorage.setItem('facebook_user',
-        {
-          name: user.name,
-          email: user.email,
-          picture: user.picture
-        })
-        .then(() => {
-          this.router.navigate(["/user"]);
-          loading.dismiss();
-        }, error => {
-          console.log(error);
-          loading.dismiss();
-        })
-      })
-    }, error =>{
-      console.log(error);
-      if(!this.platform.is('cordova')){
-        this.presentAlert();
-      }
-      loading.dismiss();
-    });
+           localStorage.setItem('facebook_user',
+             user.name + ";" + user.email +";" + user.picture
+           )
+           loading.dismiss();
+           this.router.navigate(["/user"]);
+         });
+        } else {
+         console.log('User cancelled login or did not fully authorize.');
+        }
+      });
+    }
+
   }
 
   async presentAlert() {

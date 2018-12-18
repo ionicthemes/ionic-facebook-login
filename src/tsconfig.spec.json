@@ -4,8 +4,12 @@
     "outDir": "../out-tsc/spec",
     "types": [
       "jasmine",
-      "node"
-    ]
+      "node",
+      "core-js"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+     ]
   },
   "files": [
     "test.ts",
